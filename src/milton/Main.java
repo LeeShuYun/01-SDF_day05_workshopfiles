@@ -13,22 +13,28 @@ public class Main {
         String fileName = args[0];
         System.out.printf("Processing %s\n", fileName);
 
-        try{
-            File fileObj = Paths.get("src/milton/" + fileName).toFile();
-            FileReader fileReader = new FileReader(fileObj);
-            BufferedReader bdf = new BufferedReader(fileReader);
+        // File fileObj = Paths.get("src/milton/" + fileName).toFile();
+        // FileReader fileReader = new FileReader(fileObj);
+        String line;
+        FileReader fileReader = new FileReader(fileName);
+        BufferedReader bdf = new BufferedReader(fileReader);
+                
+        Integer lineCount = 0;
+        while(lineCount < 100){
+            line = bdf.readLine();
+            if (null == line)
+                break;
+            System.out.printf(" %d: %s\n", lineCount, line.toUpperCase());
+            lineCount++;
+        }
+        
+        //read the lines up to line 20 
 
-            //read the lines up to line 20 
-            String line;
-            Integer lineCount = 0;
-            while ((line = bdf.readLine()) != null &&  lineCount < 20 ){
-                System.out.println("> " + line);
-                lineCount++;
-            }
-            bdf.close();
-        }
-        catch(IOException e){
-            e.printStackTrace();
-        }
+        // while ((line = bdf.readLine()) != null &&  lineCount < 20 ){
+        //     System.out.println("> " + line);
+        //     lineCount++;
+        // }
+        bdf.close();
+
     }
 }
