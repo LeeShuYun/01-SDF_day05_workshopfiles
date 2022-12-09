@@ -21,7 +21,7 @@ public class Main {
             //read the lines up to line 20 
             String line;
             Integer lineCount = 0;
-            while ((line = bdf.readLine()) != null &&  lineCount <= 20 ){
+            while ((line = bdf.readLine()) != null &&  lineCount < 20 ){
                 System.out.println("> " + line);
                 lineCount++;
             }
