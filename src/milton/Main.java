@@ -8,7 +8,7 @@ import java.nio.file.Paths;
 
 //java -cp classes milton.Main paradise_lost.txt
 public class Main {
-    public static void main(String[] args){
+    public static void main(String[] args) throws Exception{
         //read file name
         String fileName = args[0];
         System.out.printf("Processing %s\n", fileName);
